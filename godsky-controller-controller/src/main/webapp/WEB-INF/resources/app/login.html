@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Monkey Controller Login</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <link href="/resources/icon/cat.png" rel="shortcut icon"/>
+    <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/resources/bootstrap/slider/css/bootstrap-slider.min.css">
+    <script type="text/javascript" src="/resources/jQuery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/resources/bootstrap/slider/js/bootstrap-slider.min.js"></script>
+    <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+            src="/resources/bootstrap/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="/resources/javascript/util/building.util.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div id="loginPanel" class="panel panel-default  col-lg-12" style="width: 350px;display: none">
+        <div class="row panel-heading text-center">
+            Login For Yours
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" role="form" method="post">
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control" id="inputPassword"
+                           placeholder="Input Your username">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" id="inputPassword"
+                           placeholder="Input Your Password">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-info btn-lg btn-block">GO</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    window.addEventListener('resize', onWindowResize, true);
+
+    function onWindowResize() {
+        var height = window.innerHeight;
+        var width = window.innerWidth;
+        var bodyheight = $("#loginPanel").height();
+        var bodyWidth = $("#loginPanel").width();
+        $("#loginPanel").css("margin-top", (height - bodyheight) / 2);
+        $("#loginPanel").css("margin-left", (width - bodyWidth) / 2);
+        $("#loginPanel").fadeIn(2000);
+    }
+
+    onWindowResize();
+</script>
+</body>
+</html>
