@@ -10,11 +10,10 @@
     <modules>
         <module>godsky-controller-dao-api</module>
         <module>godsky-controller-dao-implement</module>
-        <module>godsky-controller-service-api</module>
-        <module>godsky-controller-service-implement</module>
+
         <module>godsky-controller-model</module>
-        <module>godsky-controller-controller</module>
-        <module>godsky-controller-util</module>
+  
+
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
