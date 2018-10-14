@@ -1,20 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>loan.ppcat.godsky</groupId>
-    <artifactId>godsky-controller-parent</artifactId>
+
+    <groupId>loan.ppcat.talk</groupId>
     <version>1.0-SNAPSHOT</version>
+    <artifactId>talk-parent</artifactId>
     <packaging>pom</packaging>
 
-    <name>godsky-controller</name>
-    <modules>
-        <module>godsky-controller-dao-api</module>
-        <module>godsky-controller-dao-implement</module>
-
-        <module>godsky-controller-model</module>
-  
-
-    </modules>
+    <name>talk-parent</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.shiro.version>1.4.0</project.shiro.version>
@@ -31,6 +24,16 @@
             <url>http://maven.ppcat.loan:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
+    <modules>
+        <module>talk-utils</module>
+        <module>talk-model</module>
+        <module>talk-dao-api</module>
+        <module>talk-dao-implement</module>
+        <module>talk-service-api</module>
+        <module>talk-service-implement</module>
+        <module>talk-controller</module>
+        <module>talk-controller-rocketmq</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -170,38 +173,6 @@
                 <artifactId>jackson-annotations</artifactId>
                 <version>2.9.4</version>
             </dependency>
-            <!-- Shiro dependency -->
-            <dependency>
-                <groupId>org.apache.shiro</groupId>
-                <artifactId>shiro-core</artifactId>
-                <version>${project.shiro.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.shiro</groupId>
-                <artifactId>shiro-web</artifactId>
-                <version>${project.shiro.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.shiro</groupId>
-                <artifactId>shiro-spring</artifactId>
-                <version>${project.shiro.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.shiro</groupId>
-                <artifactId>shiro-quartz</artifactId>
-                <version>1.2.6</version>
-            </dependency>
-            <!-- redis -->
-            <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-redis</artifactId>
-                <version>1.6.2.RELEASE</version>
-            </dependency>
-            <dependency>
-                <groupId>redis.clients</groupId>
-                <artifactId>jedis</artifactId>
-                <version>2.9.0</version>
-            </dependency>
             <!-- org.apache.commons/commons-collections -->
             <dependency>
                 <groupId>commons-collections</groupId>
@@ -214,39 +185,24 @@
                 <version>2.6</version>
             </dependency>
             <dependency>
-                <groupId>com.pi4j</groupId>
-                <artifactId>pi4j-core</artifactId>
-                <version>1.1</version>
+                <groupId>com.rabbitmq</groupId>
+                <artifactId>amqp-client</artifactId>
+                <version>3.5.1</version>
             </dependency>
             <dependency>
-                <groupId>com.pi4j</groupId>
-                <artifactId>pi4j-device</artifactId>
-                <version>1.1</version>
+                <groupId>org.springframework.amqp</groupId>
+                <artifactId>spring-rabbit</artifactId>
+                <version>1.4.5.RELEASE</version>
             </dependency>
             <dependency>
-                <groupId>org.json</groupId>
-                <artifactId>json</artifactId>
-                <version>20160810</version>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-websocket</artifactId>
+                <version>4.0.2.RELEASE</version>
             </dependency>
             <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>3.7</version>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-all</artifactId>
-                <version>4.1.22.Final</version>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty</artifactId>
-                <version>3.7.0.Final</version>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>1.2.26</version>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-messaging</artifactId>
+                <version>4.0.2.RELEASE</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -255,7 +211,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
