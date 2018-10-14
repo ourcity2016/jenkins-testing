@@ -1,0 +1,26 @@
+var RouteAppModule = angular.module('RouteAppModule', []);
+
+RouteAppModule.config([ '$routeProvider', function($routeProvider) {
+	$routeProvider.when('/container', {
+		//controller : 'helloCc',
+		templateUrl : 'template/container/container.ld'
+	}).when('/add', {
+		controller : 'AddBuildingController',
+		templateUrl : 'template/add/add.ld'
+	}).when('/grid', {
+		//controller : 'GetController',
+		templateUrl : 'template/pagebar/pagebar.ld'
+	}).when('/', {
+		//controller : 'helloCc',
+		templateUrl : 'template/panel/panel.ld'
+	}).otherwise({
+		redirectTo : '/'
+	})
+} ]);
+RouteAppModule.run(function($rootScope, $templateCache) {
+	$rootScope.$on('$routeChangeStart', function(event, next, current) {
+		if (typeof (current) !== 'undefined') {
+			$templateCache.remove(current.templateUrl);
+		}
+	});
+});

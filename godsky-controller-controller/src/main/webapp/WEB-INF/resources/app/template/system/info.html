@@ -1,0 +1,59 @@
+<div class="container-fluid" ng-controller="systemController">
+    <div class="row">
+        <span class="label label-default">当前</span><span class="label label-success">系统信息</span>
+    </div>
+    <div class="row pull-right">
+        <button class="btn btn-sm btn-danger pull-right" style="cursor: pointer" ng-click="recoverSystem()">恢复出厂设置</button>
+        <button class="btn btn-sm btn-warning pull-right" style="cursor: pointer;margin-right: 5px" ng-click="restartSystem()">系统重启</button>
+    </div>
+    <div class="row col-lg-offset-3 col-lg-6">
+        <table class="table table-hover">
+            <caption></caption>
+            <tbody>
+            <tr>
+                <td>内存大小</td>
+                <td>{{systemInfoData.totalMemory}} MB</td>
+                <td>空闲内存</td>
+                <td>{{systemInfoData.freeMemory}} MB</td>
+                <td>最大内存</td>
+                <td colspan="2">{{systemInfoData.maxMemory}} MB</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>已用内存</td>
+                <td>{{systemInfoData.usedMemory}} MB</td>
+                <td>CPU温度</td>
+                <td>{{systemInfoData.cpuTmp}}℃</td>
+                <td>总进程数</td>
+                <td colspan="2">{{systemInfoData.totalThread}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>CPU速度</td>
+                <td>{{systemInfoData.cpuRatio}} Hz</td>
+                <td>操作系统</td>
+                <td>{{systemInfoData.osName}}</td>
+                <td>系统版本</td>
+                <td colspan="2">{{systemInfoData.osVersion}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>物理空间</td>
+                <td>{{systemInfoData.totalPhysicalMemorySize}} MB</td>
+                <td>空闲空间</td>
+                <td>{{systemInfoData.freePhysicalMemorySize}} MB</td>
+                <td>已用空间</td>
+                <td colspan="2">{{systemInfoData.usedPhysicalMemorySize}} MB</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>JDK版本</td>
+                <td>{{systemInfoData.jdkVersion}}</td>
+                <td>网卡信息</td>
+                <td colspan="4" class="text-right" ng-bind-html="systemInfoData.ipAddrAndMac"></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
